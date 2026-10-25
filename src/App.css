@@ -1,0 +1,1043 @@
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #111111;
+  color: #ffffff;
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.aplicativo {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* CABEÇALHO */
+.cabecalho {
+  min-height: 85px;
+  padding: 20px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background-color: #171717;
+  border-bottom: 1px solid #333333;
+}
+
+.logotipo {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logotipo span {
+  color: #d4af37;
+}
+
+.menu-navegacao {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu-navegacao a {
+  color: #dddddd;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.menu-navegacao a:hover {
+  color: #d4af37;
+}
+
+/* BOTÕES */
+.botao-cabecalho,
+.botao-principal {
+  background-color: #d4af37;
+  color: #111111;
+  border: none;
+  border-radius: 6px;
+  padding: 14px 22px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.botao-cabecalho:hover,
+.botao-principal:hover {
+  background-color: #f0cc55;
+  transform: translateY(-2px);
+}
+
+/* APRESENTAÇÃO PRINCIPAL */
+.apresentacao {
+  min-height: 520px;
+  padding: 80px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  background: linear-gradient(120deg, #111111, #202020);
+}
+
+.conteudo-apresentacao {
+  flex: 1;
+  max-width: 600px;
+}
+
+.subtitulo {
+  color: #d4af37;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.conteudo-apresentacao h1 {
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.conteudo-apresentacao h1 span {
+  color: #d4af37;
+}
+
+.descricao {
+  color: #bbbbbb;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 30px;
+}
+
+/* MENSAGEM DE CONFIRMAÇÃO */
+.mensagem {
+  color: #f0cc55;
+  line-height: 1.6;
+  margin-top: 20px;
+  overflow-wrap: anywhere;
+}
+
+/* CARTÃO DA APRESENTAÇÃO */
+.cartao-apresentacao {
+  flex: 0 1 360px;
+  min-height: 320px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #242424;
+  border: 1px solid #48402a;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px #00000040;
+}
+
+.icone-barbearia {
+  color: #d4af37;
+  font-size: 55px;
+  margin-bottom: 25px;
+}
+
+.etiqueta-cartao {
+  color: #d4af37;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.cartao-apresentacao h2 {
+  font-size: 27px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.cartao-apresentacao p:last-child {
+  color: #bbbbbb;
+  line-height: 1.7;
+}
+
+/* SEÇÃO DE SERVIÇOS */
+.secao-servicos {
+  padding: 85px 10%;
+  text-align: center;
+  background-color: #181818;
+}
+
+.secao-servicos > h2,
+.secao-agendamento h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.lista-servicos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  text-align: left;
+}
+
+.cartao-servico {
+  padding: 30px;
+  background-color: #242424;
+  border: 1px solid #363636;
+  border-radius: 12px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.cartao-servico:hover {
+  border-color: #d4af37;
+  transform: translateY(-5px);
+}
+
+.cartao-servico span {
+  color: #d4af37;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.cartao-servico h3 {
+  font-size: 21px;
+  margin: 20px 0 12px;
+}
+
+.cartao-servico p {
+  color: #bbbbbb;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* SEÇÃO DE AGENDAMENTO */
+.secao-agendamento {
+  padding: 85px 20px;
+  text-align: center;
+  background-color: #111111;
+}
+
+.secao-agendamento h2 {
+  margin-bottom: 18px;
+}
+
+.secao-agendamento > p:not(.subtitulo):not(.mensagem) {
+  color: #bbbbbb;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* RODAPÉ */
+.rodape {
+  padding: 25px 20px;
+  text-align: center;
+  background-color: #171717;
+  border-top: 1px solid #333333;
+}
+
+.rodape p {
+  color: #999999;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ADAPTAÇÃO PARA TABLETS */
+@media (max-width: 900px) {
+  .cabecalho {
+    padding: 20px 5%;
+    flex-wrap: wrap;
+  }
+
+  .menu-navegacao {
+    gap: 18px;
+  }
+
+  .apresentacao {
+    padding: 65px 7%;
+    gap: 30px;
+  }
+
+  .cartao-apresentacao {
+    flex-basis: 300px;
+    padding: 25px;
+  }
+
+  .secao-servicos {
+    padding: 70px 7%;
+  }
+
+  .lista-servicos {
+    gap: 15px;
+  }
+
+  .cartao-servico {
+    padding: 22px;
+  }
+}
+
+/* ADAPTAÇÃO PARA CELULARES */
+@media (max-width: 650px) {
+  .cabecalho {
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .logotipo {
+    width: 100%;
+  }
+
+  .menu-navegacao {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .apresentacao {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 55px 7%;
+  }
+
+  .cartao-apresentacao {
+    flex: auto;
+    width: 100%;
+    min-height: 260px;
+  }
+
+  .conteudo-apresentacao h1 {
+    font-size: 42px;
+  }
+
+  .secao-servicos {
+    padding: 60px 7%;
+  }
+
+  .secao-servicos > h2,
+  .secao-agendamento h2 {
+    font-size: 30px;
+  }
+
+  .lista-servicos {
+    grid-template-columns: 1fr;
+  }
+
+  .secao-agendamento {
+    padding: 65px 7%;
+  }
+
+  .botao-cabecalho,
+  .botao-principal {
+    max-width: 100%;
+    white-space: normal;
+  }
+}
+
+/* PERGUNTAS FREQUENTES */
+.secao-perguntas {
+  padding: 75px 10%;
+  background-color: #181818;
+}
+
+.secao-perguntas > h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.lista-perguntas {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.item-pergunta {
+  margin-bottom: 12px;
+  border: 1px solid #363636;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #242424;
+}
+
+.botao-pergunta {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-align: left;
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  font-size: 16px;
+}
+
+.botao-pergunta span:last-child {
+  color: #d4af37;
+  font-size: 24px;
+}
+
+.botao-pergunta:hover {
+  background-color: #303030;
+}
+
+.resposta-pergunta {
+  padding: 0 20px 20px;
+  color: #bbbbbb;
+  line-height: 1.7;
+}
+
+@media (max-width: 650px) {
+  .secao-perguntas {
+    padding: 55px 7%;
+  }
+
+  .secao-perguntas > h2 {
+    font-size: 28px;
+  }
+
+  .botao-pergunta {
+    padding: 16px;
+    font-size: 14px;
+  }
+}
+
+/* LISTA DE AGENDAMENTOS */
+.secao-agendamentos {
+  padding: 75px 10%;
+  background-color: #111111;
+  text-align: center;
+}
+
+.secao-agendamentos > h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.descricao-agendamentos {
+  color: #bbbbbb;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.lista-registros {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.cartao-agendamento {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+  margin-bottom: 12px;
+  background-color: #242424;
+  border: 1px solid #363636;
+  border-radius: 10px;
+}
+
+.icone-calendario {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #38321f;
+  color: #d4af37;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.dados-agendamento {
+  flex: 1;
+  min-width: 0;
+}
+
+.dados-agendamento h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.dados-agendamento p {
+  color: #bbbbbb;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.horario-agendamento {
+  color: #d4af37;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.navegacao-paginas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.botao-pagina {
+  padding: 10px 14px;
+  color: #ffffff;
+  background-color: #242424;
+  border: 1px solid #484848;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.botao-pagina:hover:not(:disabled) {
+  border-color: #d4af37;
+}
+
+.botao-pagina.pagina-selecionada {
+  color: #111111;
+  background-color: #d4af37;
+  border-color: #d4af37;
+  font-weight: bold;
+}
+
+.botao-pagina:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.indicador-pagina {
+  margin-top: 16px;
+  color: #999999;
+  font-size: 13px;
+}
+
+@media (max-width: 650px) {
+  .secao-agendamentos {
+    padding: 55px 7%;
+  }
+
+  .secao-agendamentos > h2 {
+    font-size: 28px;
+  }
+
+  .cartao-agendamento {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .dados-agendamento h3 {
+    font-size: 14px;
+  }
+
+  .dados-agendamento p {
+    font-size: 12px;
+  }
+
+  .horario-agendamento {
+    font-size: 13px;
+  }
+
+  .botao-pagina {
+    padding: 9px 11px;
+  }
+}
+
+/* CORREÇÃO DOS TEXTOS DOS SERVIÇOS */
+.cartao-servico {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.cartao-servico h3 {
+  color: #ffffff;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.cartao-servico p {
+  overflow-wrap: break-word;
+}
+
+/* Evita que os cartões fiquem estreitos demais */
+@media (max-width: 900px) {
+  .lista-servicos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 500px) {
+  .lista-servicos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* TÍTULOS CLAROS PARA MELHORAR A LEITURA */
+.conteudo-apresentacao h1,
+.cartao-apresentacao h2,
+.secao-servicos > h2,
+.secao-agendamento h2,
+.secao-agendamentos > h2,
+.secao-perguntas > h2 {
+  color: #f5f5f5;
+}
+
+/* Mantém os destaques da apresentação em dourado */
+.conteudo-apresentacao h1 span {
+  color: #d4af37;
+}
+
+/* Mantém o destaque dourado dos títulos e botões */
+.secao-servicos > h2,
+.secao-agendamento h2,
+.secao-agendamentos > h2,
+.secao-perguntas > h2 {
+  text-shadow: 0 0 1px #ffffff20;
+}
+
+/* AGENDAMENTO INTERATIVO */
+.secao-agendamento-interativo {
+  padding: 70px 10%;
+  text-align: center;
+  background-color: #181818;
+}
+
+.secao-agendamento-interativo h2 {
+  color: #f5f5f5;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.secao-agendamento-interativo > p:not(.subtitulo):not(.mensagem) {
+  color: #bbbbbb;
+  margin-bottom: 24px;
+}
+
+.opcoes-servicos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.opcao-servico {
+  padding: 16px 28px;
+  background-color: #242424;
+  color: #ffffff;
+  border: 1px solid #484848;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.opcao-servico:hover,
+.opcao-servico.servico-selecionado {
+  background-color: #d4af37;
+  color: #111111;
+  border-color: #d4af37;
+}
+
+@media (max-width: 600px) {
+  .secao-agendamento-interativo {
+    padding: 55px 7%;
+  }
+
+  .secao-agendamento-interativo h2 {
+    font-size: 28px;
+  }
+
+  .opcoes-servicos {
+    flex-direction: column;
+  }
+
+  .opcao-servico {
+    width: 100%;
+  }
+}
+
+/* ESCOLHA DOS HORÁRIOS */
+.selecao-horarios {
+  margin-top: 35px;
+}
+
+.selecao-horarios > p:first-child {
+  color: #bbbbbb;
+  margin-bottom: 20px;
+}
+
+.opcoes-horarios {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.opcao-horario {
+  padding: 12px 20px;
+  background-color: #242424;
+  color: #ffffff;
+  border: 1px solid #484848;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.opcao-horario:hover,
+.opcao-horario.horario-selecionado {
+  background-color: #d4af37;
+  color: #111111;
+  border-color: #d4af37;
+}
+
+@media (max-width: 600px) {
+  .opcoes-horarios {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .opcao-horario {
+    width: 100%;
+  }
+}
+
+/* RESUMO E CONFIRMAÇÃO DO AGENDAMENTO */
+.resumo-agendamento {
+  max-width: 500px;
+  margin: 35px auto 0;
+  padding: 28px;
+  text-align: left;
+  background-color: #242424;
+  border: 1px solid #48402a;
+  border-radius: 12px;
+}
+
+.resumo-agendamento h3 {
+  color: #d4af37;
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+.resumo-agendamento p {
+  color: #dddddd;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.resumo-agendamento strong {
+  color: #ffffff;
+}
+
+.resumo-agendamento .botao-principal {
+  width: 100%;
+  margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+  .resumo-agendamento {
+    padding: 20px;
+  }
+}
+
+.mensagem-confirmacao {
+  max-width: 500px;
+  margin: 25px auto 0;
+  padding: 25px;
+  text-align: center;
+  background-color: #242424;
+  border: 1px solid #d4af37;
+  border-radius: 12px;
+}
+
+.mensagem-confirmacao h3 {
+  color: #d4af37;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.mensagem-confirmacao p {
+  color: #f5f5f5;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.progresso-container {
+  max-width: 600px;
+  margin: 25px auto;
+}
+
+.progresso-texto {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #f5f5f5;
+  font-size: 14px;
+}
+
+.progresso-fundo {
+  width: 100%;
+  height: 12px;
+  overflow: hidden;
+  background-color: #333333;
+  border-radius: 10px;
+}
+
+.progresso-preenchimento {
+  height: 100%;
+  background-color: #d4af37;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+.secao-abas {
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.botoes-abas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.aba {
+  padding: 12px 22px;
+  background-color: #242424;
+  color: #f5f5f5;
+  border: 1px solid #555;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.aba.ativa {
+  background-color: #d4af37;
+  color: #111;
+  border-color: #d4af37;
+}
+
+.conteudo-aba {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #242424;
+  color: #f5f5f5;
+  border: 1px solid #d4af37;
+  border-radius: 12px;
+}
+
+.conteudo-aba h3 {
+  color: #d4af37;
+  margin-bottom: 12px;
+}
+
+.aba:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 3px;
+}
+
+.secao-abas h2 {
+  color: #f5f5f5;
+}
+
+.secao-dropdown {
+  padding: 40px 8%;
+  text-align: center;
+}
+
+.secao-dropdown h2 {
+  color: #f5f5f5;
+}
+
+.botao-dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 350px;
+  margin: 25px auto 0;
+  padding: 15px 20px;
+  background-color: #242424;
+  color: #f5f5f5;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.botao-dropdown span {
+  color: #d4af37;
+  font-size: 20px;
+}
+
+.opcoes-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 350px;
+  margin: 5px auto 0;
+  background-color: #242424;
+  border: 1px solid #555;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.opcoes-dropdown a {
+  padding: 14px 20px;
+  color: #f5f5f5;
+  text-decoration: none;
+  text-align: left;
+}
+
+.opcoes-dropdown a:hover,
+.opcoes-dropdown a:focus-visible {
+  background-color: #d4af37;
+  color: #111;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: calc(100% - 40px);
+  padding: 15px 20px;
+  color: #f5f5f5;
+  background-color: #242424;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.toast-success {
+  border-left: 5px solid #d4af37;
+}
+
+.toast button {
+  color: #d4af37;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .toast {
+    top: 12px;
+    right: 12px;
+    max-width: calc(100% - 24px);
+  }
+}
+
+/* AJUSTES FINAIS DE ACESSIBILIDADE E RESPONSIVIDADE */
+
+/* Destaque ao navegar usando o teclado */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 3px;
+}
+
+/* Evita que botões e cartões ultrapassem a tela */
+button {
+  max-width: 100%;
+}
+
+.aplicativo {
+  width: 100%;
+  min-width: 0;
+}
+
+.opcoes-servicos,
+.opcoes-horarios,
+.botoes-abas,
+.navegacao-paginas {
+  min-width: 0;
+}
+
+/* Animação da resposta do Accordion */
+.resposta-pergunta {
+  color: #bbbbbb;
+  line-height: 1.7;
+  overflow: hidden;
+  animation: abrirResposta 0.25s ease;
+}
+
+/* A resposta fechada não ocupa espaço */
+.resposta-pergunta[hidden] {
+  display: none;
+}
+
+@keyframes abrirResposta {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Melhor adaptação para telas pequenas */
+@media (max-width: 480px) {
+  .secao-agendamento-interativo,
+  .secao-agendamentos,
+  .secao-perguntas,
+  .secao-abas,
+  .secao-dropdown {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .cartao-agendamento {
+    flex-wrap: wrap;
+  }
+
+  .horario-agendamento {
+    margin-left: auto;
+  }
+
+  .botao-dropdown {
+    max-width: 100%;
+  }
+
+  .opcoes-dropdown {
+    max-width: 100%;
+  }
+}
+
+/* Respeita usuários que preferem menos animações */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
