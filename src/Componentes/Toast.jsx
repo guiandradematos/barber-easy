@@ -3,20 +3,16 @@ import { useEffect } from 'react'
 
 function Toast({ mensagem, tipo = 'info', aoFechar }) {
   useEffect(() => {
-    if (!mensagem) {
-      return undefined
-    }
+    if (!mensagem) return
 
     const temporizador = setTimeout(() => {
-      aoFechar()
+      aoFechar?.()
     }, 3000)
 
     return () => clearTimeout(temporizador)
   }, [mensagem, aoFechar])
 
-  if (!mensagem) {
-    return null
-  }
+  if (!mensagem) return null
 
   return (
     <div
@@ -28,7 +24,7 @@ function Toast({ mensagem, tipo = 'info', aoFechar }) {
 
       <button
         type="button"
-        onClick={aoFechar}
+        onClick={() => aoFechar?.()}
         aria-label="Fechar notificação"
       >
         ×

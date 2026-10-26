@@ -16,20 +16,27 @@ function App() {
 
   const { servicoEscolhido, horarioEscolhido } = useAgendamento()
 
+  function mostrarToast(mensagem) {
+    definirToastMensagem(mensagem)
+  }
+
   function iniciarAgendamento() {
     if (servicoEscolhido && horarioEscolhido) {
-      definirToastMensagem(
+      mostrarToast(
         `Você selecionou ${servicoEscolhido} às ${horarioEscolhido}.`
       )
     } else {
-      definirToastMensagem(
+      mostrarToast(
         'Agendamento iniciado! Escolha seu serviço e horário abaixo.'
       )
     }
 
     document
       .getElementById('formulario-agendamento')
-      ?.scrollIntoView({ behavior: 'smooth' })
+      ?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
   }
 
   const opcoesMenu = [
@@ -133,7 +140,7 @@ function App() {
 
         <MenuSuspenso
           opcoes={opcoesMenu}
-          aoSelecionarOpcao={definirToastMensagem}
+          aoSelecionarOpcao={(mensagem) => mostrarToast(mensagem)}
         />
 
         <section className="secao-agendamento" id="agendamento">

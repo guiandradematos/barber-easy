@@ -23,8 +23,14 @@ function MenuSuspenso({ opcoes, aoSelecionarOpcao }) {
   }, [])
 
   function selecionarOpcao(opcao) {
-    aoSelecionarOpcao(opcao.mensagem)
+    aoSelecionarOpcao?.(opcao.mensagem)
     definirMenuAberto(false)
+
+    if (opcao.destino) {
+      document
+        .querySelector(opcao.destino)
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
   }
 
   return (
@@ -40,19 +46,22 @@ function MenuSuspenso({ opcoes, aoSelecionarOpcao }) {
         aria-controls="opcoes-dropdown"
       >
         Opções do sistema
-        <span aria-hidden="true">{menuAberto ? '−' : '+'}</span>
+        <span aria-hidden="true">
+          {menuAberto ? '−' : '+'}
+        </span>
       </button>
 
       {menuAberto && (
         <div className="opcoes-dropdown" id="opcoes-dropdown">
           {opcoes.map((opcao) => (
-            <a
+            <button
               key={opcao.destino}
-              href={opcao.destino}
+              type="button"
+              className="opcao-dropdown"
               onClick={() => selecionarOpcao(opcao)}
             >
               {opcao.texto}
-            </a>
+            </button>
           ))}
         </div>
       )}

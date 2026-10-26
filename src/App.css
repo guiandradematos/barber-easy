@@ -13,6 +13,7 @@ html {
   width: 100%;
   min-height: 100%;
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
   background-color: #111111;
 }
 
@@ -75,25 +76,37 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+#inicio,
+#servicos,
+#agendamento,
+#formulario-agendamento,
+#perguntas {
+  scroll-margin-top: 100px;
+}
+
 /* ========================================
-   CABEÇALHO
+   CABEÇALHO FIXO
 ======================================== */
 
 .cabecalho {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  min-height: 85px;
-  padding: 20px clamp(20px, 5vw, 80px);
+  min-height: 80px;
+  padding: 16px clamp(20px, 5vw, 80px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   background-color: #171717;
   border-bottom: 1px solid #333333;
+  z-index: 2000;
 }
 
 .logotipo {
   color: #ffffff;
-  font-size: 25px;
+  font-size: 24px;
   font-weight: bold;
   text-decoration: none;
   white-space: nowrap;
@@ -107,19 +120,23 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 24px;
+  gap: 28px;
 }
 
 .menu-navegacao a {
   color: #dddddd;
   text-decoration: none;
   font-size: 14px;
-  transition: color 0.3s;
+  transition: color 0.2s;
 }
 
 .menu-navegacao a:hover {
   color: #d4af37;
+}
+
+.botao-menu-mobile,
+.botao-menu-agendar {
+  display: none;
 }
 
 /* ========================================
@@ -157,7 +174,7 @@ a:focus-visible {
 .apresentacao {
   width: 100%;
   min-height: 520px;
-  padding: 80px clamp(20px, 8vw, 120px);
+  padding: 120px clamp(20px, 8vw, 120px) 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -361,8 +378,6 @@ a:focus-visible {
   border-color: #d4af37;
 }
 
-/* HORÁRIOS */
-
 .selecao-horarios {
   margin-top: 35px;
 }
@@ -452,7 +467,9 @@ a:focus-visible {
   line-height: 1.6;
 }
 
-/* BARRA DE PROGRESSO */
+/* ========================================
+   BARRA DE PROGRESSO
+======================================== */
 
 .progresso-container {
   width: 100%;
@@ -547,6 +564,10 @@ a:focus-visible {
   text-align: center;
 }
 
+.secao-dropdown h2 {
+  color: #f5f5f5;
+}
+
 .botao-dropdown {
   width: 100%;
   max-width: 350px;
@@ -579,15 +600,22 @@ a:focus-visible {
   overflow: hidden;
 }
 
-.opcoes-dropdown a {
+.opcoes-dropdown a,
+.opcoes-dropdown .opcao-dropdown {
+  width: 100%;
   padding: 14px 20px;
   color: #f5f5f5;
+  background: transparent;
+  border: none;
   text-decoration: none;
   text-align: left;
+  font-size: 14px;
 }
 
 .opcoes-dropdown a:hover,
-.opcoes-dropdown a:focus-visible {
+.opcoes-dropdown a:focus-visible,
+.opcoes-dropdown .opcao-dropdown:hover,
+.opcoes-dropdown .opcao-dropdown:focus-visible {
   background-color: #d4af37;
   color: #111111;
 }
@@ -709,7 +737,7 @@ a:focus-visible {
 }
 
 /* ========================================
-   PERGUNTAS FREQUENTES / ACORDEÃO
+   PERGUNTAS FREQUENTES
 ======================================== */
 
 .secao-perguntas {
@@ -786,30 +814,32 @@ a:focus-visible {
 }
 
 /* ========================================
-   NOTIFICAÇÃO TOAST
+   TOAST
 ======================================== */
 
 .toast {
   position: fixed;
-  top: 20px;
+  top: 100px;
   right: 20px;
-  z-index: 1000;
+  z-index: 3000;
   width: max-content;
-  max-width: calc(100% - 40px);
+  max-width: calc(100vw - 40px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
   padding: 15px 20px;
   color: #f5f5f5;
   background-color: #242424;
   border: 1px solid #d4af37;
+  border-left: 5px solid #d4af37;
   border-radius: 8px;
-  box-shadow: 0 4px 12px #0000004d;
+  box-shadow: 0 4px 16px #0008;
 }
 
-.toast-success {
-  border-left: 5px solid #d4af37;
+.toast-success,
+.toast-info {
+  border-left-color: #d4af37;
 }
 
 .toast button {
@@ -819,6 +849,58 @@ a:focus-visible {
   background: transparent;
   border: none;
   font-size: 22px;
+}
+
+/* ========================================
+   SEÇÃO FINAL DE AGENDAMENTO
+======================================== */
+
+.cta-agendamento {
+  width: 100%;
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-agendamento h2,
+.cta-agendamento p {
+  text-align: center;
+  max-width: 100%;
+}
+
+.cta-agendamento button {
+  margin: 20px auto 0;
+}
+
+.secao-agendamento {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 70px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.secao-agendamento .subtitulo,
+.secao-agendamento h2,
+.secao-agendamento p {
+  width: 100%;
+  text-align: center;
+}
+
+.secao-agendamento h2 {
+  margin: 12px 0;
+}
+
+.secao-agendamento .botao-principal {
+  display: block;
+  margin: 24px auto 0;
 }
 
 /* ========================================
@@ -843,18 +925,19 @@ a:focus-visible {
    TABLETS
 ======================================== */
 
-@media (max-width: 900px) {
+@media (min-width: 769px) and (max-width: 900px) {
   .cabecalho {
-    padding: 20px 5%;
-    flex-wrap: wrap;
+    padding: 16px 5%;
+    gap: 16px;
   }
 
   .menu-navegacao {
-    gap: 18px;
+    gap: 16px;
   }
 
   .apresentacao {
-    padding: 65px 6%;
+    padding-left: 6%;
+    padding-right: 6%;
     gap: 30px;
   }
 
@@ -864,7 +947,8 @@ a:focus-visible {
   }
 
   .secao-servicos {
-    padding: 70px 6%;
+    padding-left: 6%;
+    padding-right: 6%;
   }
 
   .lista-servicos {
@@ -878,36 +962,83 @@ a:focus-visible {
 }
 
 /* ========================================
-   CELULARES
+   CELULARES: MENU LATERAL
 ======================================== */
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
   .cabecalho {
-    justify-content: center;
-    text-align: center;
-    gap: 18px;
+    min-height: 72px;
+    padding: 12px 20px;
+    justify-content: space-between;
+    gap: 12px;
   }
 
   .logotipo {
-    width: 100%;
+    font-size: 22px;
+  }
+
+  .botao-menu-mobile {
+    display: block;
+    position: relative;
+    z-index: 2002;
+    padding: 5px 10px;
+    color: #d4af37;
+    background: transparent;
+    border: none;
+    font-size: 30px;
+  }
+
+  .botao-agendar-desktop {
+    display: none;
   }
 
   .menu-navegacao {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 16px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(280px, 85vw);
+    height: 100vh;
+    height: 100dvh;
+    padding: 100px 25px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 24px;
+    overflow-y: auto;
+    background-color: #171717;
+    border-left: 1px solid #333333;
+    box-shadow: -10px 0 30px #0005;
+    z-index: 2001;
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      transform 0.3s ease,
+      visibility 0.3s ease;
   }
 
-  .botao-cabecalho {
+  .menu-navegacao.menu-aberto {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .menu-navegacao a {
+    padding: 10px 0;
+    font-size: 18px;
+  }
+
+  .botao-menu-agendar {
+    display: block;
     width: 100%;
-    max-width: 260px;
+    margin-top: 10px;
   }
 
   .apresentacao {
     flex-direction: column;
     align-items: stretch;
-    padding: 55px 6%;
+    padding: 120px 6% 55px;
     gap: 35px;
   }
 
@@ -1003,9 +1134,9 @@ a:focus-visible {
   }
 
   .toast {
-    top: 12px;
+    top: 84px;
     right: 12px;
-    max-width: calc(100% - 24px);
+    max-width: calc(100vw - 24px);
   }
 }
 
@@ -1024,55 +1155,38 @@ a:focus-visible {
   }
 }
 
-/* Seção final de agendamento */
-.cta-agendamento {
-  width: 100%;
-  padding: 60px 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
+/* ========================================
+   CORREÇÃO DOS BOTÕES DO CABEÇALHO
+======================================== */
+
+/* Computador: mostra somente o botão do cabeçalho */
+.botao-menu-mobile {
+  display: none;
 }
 
-.cta-agendamento h2,
-.cta-agendamento p {
-  text-align: center;
-  max-width: 100%;
+.botao-menu-agendar {
+  display: none;
 }
 
-.cta-agendamento button {
-  margin: 20px auto 0;
+.botao-agendar-desktop {
+  display: inline-flex;
 }
 
-/* Centraliza a seção "É RÁPIDO E FÁCIL" */
-.secao-agendamento {
-  width: 100%;
-  max-width: none;
-  margin: 0 auto;
-  padding: 70px 20px;
-  box-sizing: border-box;
+/* Celular e tablet: mostra o botão do menu e
+   transfere o agendamento para dentro do menu */
+@media (max-width: 768px) {
+  .botao-menu-mobile {
+    display: block;
+  }
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  .botao-agendar-desktop {
+    display: none;
+  }
 
-  text-align: center;
-}
-
-.secao-agendamento .subtitulo,
-.secao-agendamento h2,
-.secao-agendamento p {
-  width: 100%;
-  text-align: center;
-}
-
-.secao-agendamento h2 {
-  margin: 12px 0;
-}
-
-.secao-agendamento .botao-principal {
-  display: block;
-  margin: 24px auto 0;
+  .botao-menu-agendar {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+  }
 }
